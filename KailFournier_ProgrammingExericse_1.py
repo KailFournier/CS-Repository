@@ -6,16 +6,16 @@ def ticket_booth():
 
 #the main function of the program. calculates the tickets bought by the customer, and how many bought total
 def ticket_sale(ticket_req):
-    global total_tickets
-    if ticket_req <= 4:
-        if total_tickets ++ ticket_req <= 20:
-            if ticket_req == 1:
+    global total_tickets #Gets the global total tickets var
+    if ticket_req <= 4: #checks if thr requested tickets are greater than 4 or not
+        if total_tickets ++ ticket_req <= 20: #checks if the requested tickets make total tickets greater than 20
+            if ticket_req == 1: #checks if the requested ticket is 1, for grammatical consistency
                 print("Thank you for your purchase. Here is your ticket.")
                 total_tickets += int(ticket_req)
             else:
                 print("Thank you for your purchase. Here are your " + str(ticket_req) + " tickets.")
                 total_tickets += int(ticket_req)
-        else:
+        else: #tells user that they asked for too many tickets and tells them how many are available
             rem_tickets = remaining_tickets()
             print("I'm sorry, but we only have " + str(rem_tickets) + " presale tickets remaining." )
 
